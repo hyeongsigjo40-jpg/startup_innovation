@@ -10,7 +10,11 @@ type Props = {
 export default function ShareButton({ result }: Props) {
   const [copied, setCopied] = useState(false);
 
-  const shareText = `${result.shareText}\n${result.oneLiner}\n\n너도 해봐:\nhttps://서비스주소/test`;
+  const resultUrl = typeof window !== "undefined"
+    ? `${window.location.origin}/result?type=${result.type}`
+    : `/result?type=${result.type}`;
+
+  const shareText = `${result.shareText}\n${result.oneLiner}\n\n내 결과 보기:\n${resultUrl}`;
 
   const handleShare = async () => {
     if (navigator.share) {

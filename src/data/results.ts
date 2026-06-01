@@ -1,6 +1,7 @@
 import { GiftType } from "./questions";
 
 export type ResultData = {
+  type: GiftType;
   emoji: string;
   typeName: string;
   title: string;
@@ -13,7 +14,7 @@ export type ResultData = {
 };
 
 export const results: Record<GiftType, ResultData> = {
-  cheetah: {
+  cheetah: { type: "cheetah" as const,
     emoji: "🐆",
     typeName: "치타형",
     title: "너무 오래 달려온 치타형",
@@ -25,7 +26,7 @@ export const results: Record<GiftType, ResultData> = {
     packageItems: ["수면안대", "허브티", "수면양말", "따뜻한 간식", "회복 메시지 카드"],
     shareText: "나 치타형 나왔어 🐆 요즘 너무 달렸나 봄 ㅋㅋ",
   },
-  rabbit: {
+  rabbit: { type: "rabbit" as const,
     emoji: "🐇",
     typeName: "토끼형",
     title: "생각이 많아진 토끼형",
@@ -37,7 +38,7 @@ export const results: Record<GiftType, ResultData> = {
     packageItems: ["미니 무드등", "허브티", "촉감 오브제", "미니 룸스프레이", "호흡 카드"],
     shareText: "나 토끼형 나왔어 🐇 생각 많은 거 들킨 듯 ㅋㅋ",
   },
-  cat: {
+  cat: { type: "cat" as const,
     emoji: "🐱",
     typeName: "뚱냥이형",
     title: "일상이 멈춘 것 같은 뚱냥이형",
@@ -49,7 +50,7 @@ export const results: Record<GiftType, ResultData> = {
     packageItems: ["귀여운 소품", "작은 취미 키트", "간식", "노트/스티커", "기분전환 미션 카드"],
     shareText: "나 뚱냥이형 나왔어 🐱 요즘 그냥 누워있고 싶긴 함 ㅋㅋ",
   },
-  hedgehog: {
+  hedgehog: { type: "hedgehog" as const,
     emoji: "🦔",
     typeName: "고슴도치형",
     title: "조용히 곁이 필요한 고슴도치형",
@@ -61,7 +62,7 @@ export const results: Record<GiftType, ResultData> = {
     packageItems: ["감성 무드등", "포근한 미니 담요", "머그컵", "편지 카드", "사진/기억 오브제"],
     shareText: "나 고슴도치형 나왔어 🦔 좀 맞는 듯…ㅋㅋ",
   },
-  deer: {
+  deer: { type: "deer" as const,
     emoji: "🦌",
     typeName: "사슴형",
     title: "자기확신이 필요한 사슴형",
@@ -73,7 +74,7 @@ export const results: Record<GiftType, ResultData> = {
     packageItems: ["메시지 카드", "향", "작은 장식품", "자기돌봄 키트", "기분전환 아이템"],
     shareText: "나 사슴형 나왔어 🦌 요즘 좀 쫄아있었나 봄 ㅋㅋ",
   },
-  retriever: {
+  retriever: { type: "retriever" as const,
     emoji: "🐶",
     typeName: "리트리버형",
     title: "가벼운 즐거움이 어울리는 리트리버형",
