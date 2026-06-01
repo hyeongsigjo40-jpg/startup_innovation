@@ -10,6 +10,10 @@ export async function GET(req: NextRequest) {
   const type = searchParams.get("type") as GiftType | null;
   const result = type && results[type] ? results[type] : results["retriever"];
 
+  const fontData = await fetch(
+    "https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2"
+  ).then((r) => r.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -23,6 +27,7 @@ export async function GET(req: NextRequest) {
           background: "#FFF8EF",
           padding: "60px",
           gap: "24px",
+          fontFamily: "Noto Sans KR",
         }}
       >
         <div style={{ fontSize: 100 }}>{result.emoji}</div>
@@ -62,6 +67,16 @@ export async function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      fonts: [
+        {
+          name: "Noto Sans KR",
+          data: fontData,
+          style: "normal",
+        },
+      ],
+    }
   );
 }
