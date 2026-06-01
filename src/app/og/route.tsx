@@ -3,16 +3,16 @@ import { NextRequest } from "next/server";
 import { results } from "@/data/results";
 import { GiftType } from "@/data/questions";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
+  const { searchParams, origin } = new URL(req.url);
   const type = searchParams.get("type") as GiftType | null;
   const result = type && results[type] ? results[type] : results["retriever"];
 
-  const fontData = await fetch(
-    "https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgm20xz64px_1hVWr0wuPNGmlQNMEfD4.0.woff2"
-  ).then((r) => r.arrayBuffer());
+  const fontData = await fetch(`${origin}/NotoSansKR-Bold.woff2`).then((r) =>
+    r.arrayBuffer()
+  );
 
   return new ImageResponse(
     (
@@ -30,10 +30,10 @@ export async function GET(req: NextRequest) {
           fontFamily: "Noto Sans KR",
         }}
       >
-        <div style={{ fontSize: 100 }}>{result.emoji}</div>
+        <div style={{ fontSize: 120 }}>{result.emoji}</div>
         <div
           style={{
-            fontSize: 48,
+            fontSize: 52,
             fontWeight: 700,
             color: "#2F2A26",
             textAlign: "center",
@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
         </div>
         <div
           style={{
-            fontSize: 28,
+            fontSize: 30,
             color: "#7A6F66",
             textAlign: "center",
             maxWidth: 700,
@@ -57,9 +57,9 @@ export async function GET(req: NextRequest) {
             marginTop: 16,
             background: "#FF9F6E",
             color: "white",
-            fontSize: 24,
+            fontSize: 26,
             fontWeight: 600,
-            padding: "14px 36px",
+            padding: "14px 40px",
             borderRadius: 20,
           }}
         >
@@ -75,6 +75,7 @@ export async function GET(req: NextRequest) {
           name: "Noto Sans KR",
           data: fontData,
           style: "normal",
+          weight: 700,
         },
       ],
     }
