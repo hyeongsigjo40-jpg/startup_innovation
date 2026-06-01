@@ -1,65 +1,60 @@
-import Image from "next/image";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
+import TypePreview from "@/components/TypePreview";
+
+const situations = [
+  { emoji: "🤔", text: "뭘 좋아하는지 모르겠어서 기프티콘만 보냈을 때" },
+  { emoji: "💸", text: "선물 받고 감사해하는데 정작 안 쓰는 것 같을 때" },
+  { emoji: "🥺", text: "요즘 힘들어 보이는 친구에게 뭔가 해주고 싶을 때" },
+  { emoji: "🎁", text: "기념일인데 의미 있는 선물이 떠오르지 않을 때" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-[#FFF8EF]">
+      <Hero />
+
+      {/* Problem empathy */}
+      <section className="px-6 py-16 bg-white">
+        <h2 className="text-2xl font-bold text-[#2F2A26] text-center mb-3">
+          기프티콘 하나로는 마음이 조금 부족할 때가 있어요
+        </h2>
+        <p className="text-[#7A6F66] text-center mb-10 text-sm">
+          상대방의 요즘 마음을 알면, 선물이 달라져요
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          {situations.map((s, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-4 bg-[#FFF8EF] rounded-2xl px-5 py-4"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <span className="text-2xl">{s.emoji}</span>
+              <p className="text-[#2F2A26] text-sm leading-snug">{s.text}</p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <HowItWorks />
+      <TypePreview />
+
+      {/* Final CTA */}
+      <section className="px-6 py-20 bg-white text-center">
+        <div className="text-5xl mb-4">💭</div>
+        <h2 className="text-2xl font-bold text-[#2F2A26] mb-3">
+          지금 떠오르는 사람이 있나요?
+        </h2>
+        <p className="text-[#7A6F66] mb-8 text-sm">
+          먼저 나의 유형을 알아보고, 친구에게도 공유해봐요
+        </p>
+        <Link
+          href="/test"
+          className="inline-block bg-[#FF9F6E] text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#ff8a50] transition-colors"
+        >
+          테스트 시작하기
+        </Link>
+      </section>
+    </main>
   );
 }
