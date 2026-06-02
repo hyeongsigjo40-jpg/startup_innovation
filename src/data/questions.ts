@@ -8,12 +8,12 @@ export const questions: Question[] = [
     id: 1,
     title: "아침에 눈을 떴을 때, 가장 가까운 생각은?",
     options: [
-      { label: "오늘도 할 일이 많다. 일단 빨리 움직여야 할 것 같다.", type: "cheetah" },
-      { label: "오늘 별일 없었으면 좋겠다. 시작 전부터 괜히 긴장된다.", type: "rabbit" },
-      { label: "몸이 무겁고, 조금만 더 누워 있고 싶다.", type: "cat" },
-      { label: "또 비슷한 하루구나. 누가 먼저 연락해줬으면 좋겠다.", type: "hedgehog" },
-      { label: "오늘도 내가 잘 해낼 수 있을지 모르겠다.", type: "deer" },
-      { label: "오늘도 무사히 잘 시작해봐야겠다.", type: "retriever" },
+      { label: "오늘도 할 일이 산더미야... 일단 무조건 움직여야 해!", type: "cheetah" },
+      { label: "오늘 제발 별일 없었으면... 벌써부터 왜 이렇게 긴장되지?", type: "rabbit" },
+      { label: "으... 몸이 너무 무거워. 딱 10분만 더 누워 있으면 안 되나?", type: "cat" },
+      { label: "또 똑같은 하루네... 누가 먼저 연락이라도 줬으면.", type: "hedgehog" },
+      { label: "오늘도 잘 해낼 수 있을까... 솔직히 자신 없다.", type: "deer" },
+      { label: "오늘 하루도 잘 해봐야지! 뭐, 어떻게든 되겠지~", type: "retriever" },
     ],
   },
   {
