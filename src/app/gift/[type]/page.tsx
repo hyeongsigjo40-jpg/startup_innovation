@@ -63,12 +63,13 @@ export default async function GiftDetailPage({ params }: Props) {
         {/* 이미지 영역 */}
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
           {hasImage ? (
-            <div className="relative w-full aspect-square">
+            <div className="w-full">
               <Image
                 src={imageSrc}
                 alt={`${result.typeName} 패키지`}
-                fill
-                className="object-cover"
+                width={1080}
+                height={1350}
+                className="w-full h-auto"
                 sizes="(max-width: 512px) 100vw, 512px"
               />
             </div>
