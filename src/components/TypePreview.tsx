@@ -16,7 +16,7 @@ export default function TypePreview() {
             <Link
               key={key}
               href={`/gift/${key}`}
-              className="bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center text-center gap-2 hover:shadow-md transition-shadow"
+              className="bg-white rounded-3xl p-5 shadow-sm border border-[#E8D8C4] flex flex-col items-center text-center gap-2 hover:shadow-md transition-shadow"
             >
               <span className="text-4xl">{r.emoji}</span>
               <p className="font-bold text-[#3D2E1E]">{r.typeName}</p>
@@ -28,7 +28,7 @@ export default function TypePreview() {
       <div className="text-center">
         <Link
           href="/gift"
-          className="inline-block bg-[#3D2E1E] text-white text-base font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#B5704A] transition-colors"
+          className="inline-block bg-[#3D2E1E] text-white text-base font-semibold px-8 py-4 rounded-3xl shadow-md hover:bg-[#B5704A] transition-colors"
         >
           🎁 내 친구한테 필요한 선물 확인하기
         </Link>

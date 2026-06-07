@@ -12,7 +12,7 @@ export default function Hero() {
       </p>
       <Link
         href="/test"
-        className="bg-[#C8845A] text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#B5704A] transition-colors"
+        className="bg-[#C8845A] text-white text-lg font-semibold px-8 py-4 rounded-3xl shadow-md hover:bg-[#B5704A] transition-colors"
       >
         테스트 시작하기
       </Link>

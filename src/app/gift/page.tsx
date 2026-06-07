@@ -30,7 +30,7 @@ export default function GiftPage() {
               <Link
                 key={key}
                 href={`/gift/${key}`}
-                className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow"
+                className="bg-white rounded-3xl px-6 py-5 shadow-sm border border-[#E8D8C4] flex items-center gap-5 hover:shadow-md transition-shadow"
               >
                 <span className="text-5xl flex-shrink-0">{r.emoji}</span>
                 <div className="flex-1 min-w-0">
@@ -44,12 +44,12 @@ export default function GiftPage() {
         </div>
 
         {/* 테스트 유도 */}
-        <div className="mt-12 bg-white rounded-2xl p-6 text-center shadow-sm">
+        <div className="mt-12 bg-white rounded-3xl p-6 text-center shadow-sm border border-[#E8D8C4]">
           <p className="text-[#3D2E1E] font-semibold mb-2">아직 결과를 모른다면?</p>
           <p className="text-[#9C8B7A] text-sm mb-5">친구에게 테스트 링크를 보내보세요</p>
           <Link
             href="/test"
-            className="inline-block bg-[#C8845A] text-white font-semibold px-7 py-3 rounded-2xl hover:bg-[#B5704A] transition-colors"
+            className="inline-block bg-[#C8845A] text-white font-semibold px-7 py-3 rounded-3xl hover:bg-[#B5704A] transition-colors"
           >
             테스트 시작하기
           </Link>

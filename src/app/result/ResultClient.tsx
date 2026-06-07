@@ -26,7 +26,7 @@ function ResultContent() {
         <div className="flex flex-col gap-3 items-center">
           <button
             onClick={scrollToPackage}
-            className="w-full max-w-xs bg-white border-2 border-[#C8845A] text-[#C8845A] font-semibold px-6 py-3 rounded-2xl hover:bg-[#EDE0CA] transition-colors"
+            className="w-full max-w-xs bg-white border-2 border-[#C8845A] text-[#C8845A] font-semibold px-6 py-3 rounded-3xl hover:bg-[#EDE0CA] transition-colors"
           >
             🎁 추천 선물 보기
           </button>

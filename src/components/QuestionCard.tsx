@@ -18,7 +18,7 @@ export default function QuestionCard({ question, onSelect }: Props) {
           <button
             key={i}
             onClick={() => onSelect(opt.type)}
-            className="w-full text-left bg-white border-2 border-transparent rounded-2xl px-5 py-4 text-[#3D2E1E] text-sm font-medium shadow-sm hover:border-[#C8845A] hover:bg-[#F5EDD8] transition-all"
+            className="w-full text-left bg-white border-2 border-transparent rounded-3xl px-5 py-4 text-[#3D2E1E] text-sm font-medium shadow-sm border border-[#E8D8C4] hover:border-[#C8845A] hover:bg-[#F5EDD8] transition-all"
           >
             <span className="text-[#C8845A] font-bold mr-2">{optionLabels[i]}.</span>
             {opt.label}

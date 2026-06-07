@@ -27,7 +27,7 @@ export default function Home() {
           {situations.map((s, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 bg-[#F5EDD8] rounded-2xl px-5 py-4"
+              className="flex items-start gap-4 bg-[#F5EDD8] rounded-3xl px-5 py-4"
             >
               <span className="text-2xl">{s.emoji}</span>
               <p className="text-[#3D2E1E] text-sm leading-snug">{s.text}</p>
@@ -50,7 +50,7 @@ export default function Home() {
         </p>
         <Link
           href="/test"
-          className="inline-block bg-[#C8845A] text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#B5704A] transition-colors"
+          className="inline-block bg-[#C8845A] text-white text-lg font-semibold px-8 py-4 rounded-3xl shadow-md hover:bg-[#B5704A] transition-colors"
         >
           테스트 시작하기
         </Link>

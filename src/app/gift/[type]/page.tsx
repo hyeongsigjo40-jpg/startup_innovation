@@ -61,7 +61,7 @@ export default async function GiftDetailPage({ params }: Props) {
         </div>
 
         {/* 이미지 영역 */}
-        <div className="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+        <div className="bg-white rounded-3xl shadow-sm border border-[#E8D8C4] overflow-hidden mb-6">
           {hasImage ? (
             <div className="w-full">
               <Image
@@ -83,7 +83,7 @@ export default async function GiftDetailPage({ params }: Props) {
         </div>
 
         {/* 위로 문구 */}
-        <div className="bg-[#EDE0CA] rounded-2xl px-6 py-5 mb-6 text-center">
+        <div className="bg-[#EDE0CA] rounded-3xl px-6 py-5 mb-6 text-center">
           <p className="text-[#9C8B7A] text-xs mb-2">지금 필요한 위로</p>
           <p className="text-[#3D2E1E] font-semibold text-lg leading-snug">
             💬 {result.comfort}
@@ -91,14 +91,14 @@ export default async function GiftDetailPage({ params }: Props) {
         </div>
 
         {/* 패키지 구성 */}
-        <div className="bg-white rounded-2xl shadow-sm px-6 py-6 mb-6">
+        <div className="bg-white rounded-3xl shadow-sm border border-[#E8D8C4] px-6 py-6 mb-6">
           <h2 className="font-bold text-[#3D2E1E] text-lg mb-1">🎁 {result.packageName}</h2>
           <p className="text-[#9C8B7A] text-xs mb-5">이런 선물이 지금의 친구에게 잘 어울려요</p>
           <div className="flex flex-col gap-3">
             {result.packageItems.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-3 bg-[#F5EDD8] rounded-xl px-4 py-3"
+                className="flex items-center gap-3 bg-[#F5EDD8] rounded-2xl px-4 py-3"
               >
                 <span className="text-[#C8845A]">✦</span>
                 <span className="text-[#3D2E1E] text-sm font-medium">{item}</span>
@@ -108,7 +108,7 @@ export default async function GiftDetailPage({ params }: Props) {
         </div>
 
         {/* 유형 설명 */}
-        <div className="bg-white rounded-2xl shadow-sm px-6 py-6 mb-8">
+        <div className="bg-white rounded-3xl shadow-sm border border-[#E8D8C4] px-6 py-6 mb-8">
           <h2 className="font-bold text-[#3D2E1E] mb-3">지금 친구의 상태는</h2>
           <p className="text-[#9C8B7A] text-sm leading-relaxed">{result.description}</p>
         </div>
@@ -117,7 +117,7 @@ export default async function GiftDetailPage({ params }: Props) {
         <div className="flex flex-col gap-3 items-center">
           <Link
             href="/test"
-            className="w-full bg-[#C8845A] text-white font-semibold px-6 py-4 rounded-2xl text-center shadow-md hover:bg-[#B5704A] transition-colors"
+            className="w-full bg-[#C8845A] text-white font-semibold px-6 py-4 rounded-3xl text-center shadow-md hover:bg-[#B5704A] transition-colors"
           >
             💌 친구에게 테스트 링크 보내기
           </Link>
