@@ -8,15 +8,15 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="px-6 py-16 bg-white">
-      <h2 className="text-2xl font-bold text-[#2F2A26] text-center mb-10">이렇게 사용해요</h2>
+      <h2 className="text-2xl font-bold text-[#3D2E1E] text-center mb-10">이렇게 사용해요</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
         {steps.map((step, i) => (
           <div key={i} className="flex flex-col items-center text-center gap-3">
-            <div className="w-14 h-14 rounded-full bg-[#FFF0E6] flex items-center justify-center text-2xl">
+            <div className="w-14 h-14 rounded-full bg-[#EDE0CA] flex items-center justify-center text-2xl">
               {step.emoji}
             </div>
-            <p className="font-semibold text-[#2F2A26] text-sm">{step.title}</p>
-            <p className="text-[#7A6F66] text-xs">{step.desc}</p>
+            <p className="font-semibold text-[#3D2E1E] text-sm">{step.title}</p>
+            <p className="text-[#9C8B7A] text-xs">{step.desc}</p>
           </div>
         ))}
       </div>

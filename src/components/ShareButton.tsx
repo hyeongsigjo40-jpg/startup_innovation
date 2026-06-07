@@ -34,12 +34,12 @@ export default function ShareButton({ result }: Props) {
     <div className="flex flex-col items-center gap-2">
       <button
         onClick={handleShare}
-        className="bg-[#FF9F6E] text-white font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#ff8a50] transition-colors text-lg"
+        className="bg-[#C8845A] text-white font-semibold px-8 py-4 rounded-2xl shadow-md hover:bg-[#B5704A] transition-colors text-lg"
       >
         💌 친구에게 공유하기
       </button>
       {copied && (
-        <p className="text-[#7A6F66] text-sm bg-[#FFF0E6] px-4 py-2 rounded-xl">
+        <p className="text-[#9C8B7A] text-sm bg-[#EDE0CA] px-4 py-2 rounded-xl">
           링크가 복사됐어요!
         </p>
       )}

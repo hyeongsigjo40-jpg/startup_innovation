@@ -36,11 +36,11 @@ export default function TestPage() {
   const q = questions[currentQuestion];
 
   return (
-    <main className="min-h-screen bg-[#FFF8EF] flex flex-col px-6 py-10">
+    <main className="min-h-screen bg-[#F5EDD8] flex flex-col px-6 py-10">
       <div className="max-w-lg mx-auto w-full flex-1 flex flex-col">
         <button
           onClick={handleBack}
-          className="text-[#7A6F66] text-sm mb-6 flex items-center gap-1 hover:text-[#2F2A26] transition-colors self-start"
+          className="text-[#9C8B7A] text-sm mb-6 flex items-center gap-1 hover:text-[#3D2E1E] transition-colors self-start"
         >
           ← 뒤로
         </button>
