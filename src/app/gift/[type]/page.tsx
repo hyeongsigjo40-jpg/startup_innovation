@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { existsSync } from "fs";
+import { join } from "path";
 import { results } from "@/data/results";
 import { GiftType } from "@/data/questions";
 
@@ -32,6 +35,14 @@ export default async function GiftDetailPage({ params }: Props) {
   const prevType = currentIndex > 0 ? order[currentIndex - 1] : null;
   const nextType = currentIndex < order.length - 1 ? order[currentIndex + 1] : null;
 
+  // /public/gifts/{type}.png 또는 .jpg 있으면 표시
+  const hasImage =
+    existsSync(join(process.cwd(), "public/gifts", `${type}.png`)) ||
+    existsSync(join(process.cwd(), "public/gifts", `${type}.jpg`));
+  const imageSrc = existsSync(join(process.cwd(), "public/gifts", `${type}.png`))
+    ? `/gifts/${type}.png`
+    : `/gifts/${type}.jpg`;
+
   return (
     <main className="min-h-screen bg-[#F5EDD8]">
       <div className="max-w-lg mx-auto px-6 py-12">
@@ -51,11 +62,23 @@ export default async function GiftDetailPage({ params }: Props) {
 
         {/* 이미지 영역 */}
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
-          <div className="w-full aspect-square bg-[#EDE0CA] flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[#E0D0BA]">
-            <span className="text-5xl opacity-40">{result.emoji}</span>
-            <p className="text-[#C8845A] text-sm font-medium">패키지 이미지</p>
-            <p className="text-[#C8845A] text-xs">이미지를 추가해주세요</p>
-          </div>
+          {hasImage ? (
+            <div className="relative w-full aspect-square">
+              <Image
+                src={imageSrc}
+                alt={`${result.typeName} 패키지`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 512px) 100vw, 512px"
+              />
+            </div>
+          ) : (
+            <div className="w-full aspect-square bg-[#EDE0CA] flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[#E0D0BA]">
+              <span className="text-5xl opacity-40">{result.emoji}</span>
+              <p className="text-[#C8845A] text-sm font-medium">패키지 이미지</p>
+              <p className="text-[#C8845A] text-xs">이미지를 추가해주세요</p>
+            </div>
+          )}
         </div>
 
         {/* 위로 문구 */}
