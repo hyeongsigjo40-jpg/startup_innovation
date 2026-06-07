@@ -36,12 +36,12 @@ export default async function GiftDetailPage({ params }: Props) {
   const nextType = currentIndex < order.length - 1 ? order[currentIndex + 1] : null;
 
   // /public/gifts/{type}.png 또는 .jpg 있으면 표시
-  const hasImage =
-    existsSync(join(process.cwd(), "public/gifts", `${type}.png`)) ||
-    existsSync(join(process.cwd(), "public/gifts", `${type}.jpg`));
-  const imageSrc = existsSync(join(process.cwd(), "public/gifts", `${type}.png`))
-    ? `/gifts/${type}.png`
-    : `/gifts/${type}.jpg`;
+  const exts = ["png", "jpg", "jpeg", "webp"];
+  const foundExt = exts.find((ext) =>
+    existsSync(join(process.cwd(), "public/gifts", `${type}.${ext}`))
+  );
+  const hasImage = !!foundExt;
+  const imageSrc = hasImage ? `/gifts/${type}.${foundExt}` : "";
 
   return (
     <main className="min-h-screen bg-[#F5EDD8]">
